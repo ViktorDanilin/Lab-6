@@ -22,6 +22,13 @@ class pistol(guns):  # pistol - PM (пистолет Макарова); info fro
         self.time = super().calculation_1()
         self.difference = super().calculation_2()
 
+    def reload(self, bullets): # увеличиваем кол-во патронов в магазине
+        self.__bullets += bullets
+        super().__init__(self.__bullets, self.__f_rate, self.__f_range)
+        self.time = super().calculation_1()
+        print("Новое время опустошения магазина пистолета: ", self.time)
+        print("_______________________________________________________")
+
     def print(self):
         print("Пистолет")
         print("Магазин опустеет за", self.time, "секунды")
@@ -37,6 +44,13 @@ class assault_rifle(guns):  # AR - M4; info from wikipedia.org
         super().__init__(self.__bullets, self.__f_rate, self.__f_range)
         self.time = super().calculation_1()
         self.difference = super().calculation_2()
+
+    def reload(self, bullets): # увеличиваем кол-во патронов в магазине
+        self.__bullets += bullets
+        super().__init__(self.__bullets, self.__f_rate, self.__f_range)
+        self.time = super().calculation_1()
+        print("Новое время опустошения магазина пистолета: ", self.time)
+        print("_______________________________________________________")
 
     def print(self):
         print("Автомат")
@@ -54,6 +68,13 @@ class sniper_rifle(guns):  # SR - Винтовка Мосина; info from wikip
         self.time = super().calculation_1()
         self.difference = super().calculation_2()
 
+    def reload(self, bullets): # увеличиваем кол-во патронов в магазине
+        self.__bullets += bullets
+        super().__init__(self.__bullets, self.__f_rate, self.__f_range)
+        self.time = super().calculation_1()
+        print("Новое время опустошения магазина пистолета: ", self.time)
+        print("_______________________________________________________")
+
     def print(self):
         print("Снайперская винтовка")
         print("Магазин опустеет за", self.time, "секунды")
@@ -65,5 +86,8 @@ pm = pistol()
 m4 = assault_rifle()
 sm = sniper_rifle()
 pm.print()
+pm.reload(19)
 m4.print()
+m4.reload(60)
 sm.print()
+sm.reload(10)
