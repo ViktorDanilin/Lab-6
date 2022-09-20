@@ -105,7 +105,6 @@ class machinepistole(guns):  # MP - MP5; info from wikipedia.org
         print("_______________________________________________________")
 
 
-
 pm = pistol()
 m4 = assault_rifle()
 sm = sniper_rifle()
